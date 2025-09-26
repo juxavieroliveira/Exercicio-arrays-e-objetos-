@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+ <title>Exercícios Array e Objetos </title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <h1>Exercício Arrays e Objetos </h1>
+
+    <h2>Exercício 1: Criar e Iterar sobre um Array</h2>
+
+    <script>
+        let numeros = [10, 20, 30, 40, 50];
+        for (let i = 0; i < numeros.length; i++) {
+            console.log(numeros[i]);
+        }
+        numeros.forEach(numero => console.log(numero));
+    </script>
+
+    <h2>Exercício 2: Manipular um Array</h2>
+    <script>
+        let frutas = ["maçã", "banana", "laranja"];
+        frutas.push("uva");
+        frutas.shift();
+        console.log(frutas);
+    </script>
+
+    <h2>Exercício 3: Filtragem de Array</h2>
+    <script>
+        let numeros2 = [1,2,3,4,5,6,7,8,9,10];
+        let pares = numeros2.filter(num => num % 2 === 0);
+        console.log(pares);
+    </script>
+
+    <h2>Exercício 4: Encontrar o Maior Valor</h2>
+    <script>
+        let aleatorios = [15, 8, 42, 23, 67, 3];
+        let maior1 = Math.max(...aleatorios);
+        console.log("Maior valor:", maior1);
+        let maior2 = aleatorios[0];
+        for (let num of aleatorios) {
+            if (num > maior2) {
+                maior2 = num;
+            }
+        }
+        console.log("Maior valor (manual):", maior2);
+    </script>
+
+    <h2>Exercício 5: Soma dos Elementos</h2>
+    <script>
+        let numeros3 = [5, 10, 15, 20];
+        function somaArray(arr) {
+            return arr.reduce((acumulador, valor) => acumulador + valor, 0);
+        }
+        console.log("Soma:", somaArray(numeros3));
+    </script>
+
+    <h2>Exercício 6: Criar e Acessar um Objeto</h2>
+    <script>
+        let pessoa = {
+            nome: "João",
+            idade: 25,
+            profissao: "Programador"
+        };
+        console.log(pessoa.nome);
+        console.log(pessoa.idade);
+        console.log(pessoa.profissao);
+    </script>
+
+    <h2>Exercício 7: Modificar um Objeto</h2>
+    <script>
+        let carro = {
+            marca: "Toyota",
+            modelo: "Corolla",
+            ano: 2015
+        };
+        carro.ano = new Date().getFullYear();
+        console.log(carro);
+    </script>
+
+    <h2>Exercício 8: Adicionar Propriedade ao Objeto</h2>
+    <script>
+        let livro = {
+            titulo: "O Senhor dos Anéis",
+            autor: "J.R.R. Tolkien"
+        };
+        livro.anoDePublicacao = 1954;
+        console.log(livro);
+    </script>
+
+    <h2>Exercício 9: Iterar sobre as Propriedades de um Objeto</h2>
+    <script>
+        let produto = {
+            nome: "Notebook",
+            preco: 3500,
+            quantidade: 5
+        };
+        for (let propriedade in produto) {
+            console.log(propriedade + ": " + produto[propriedade]);
+        }
+    </script>
+
+    <h2>Exercício 10: Função para Exibir um Objeto</h2>
+    <script>
+        let estudante = {
+            nome: "Maria",
+            idade: 20,
+            curso: "Engenharia"
+        };
+        function exibirEstudante(estud) {
+            console.log(`O estudante ${estud.nome} tem ${estud.idade} anos e está cursando ${estud.curso}.`);
+        }
+        exibirEstudante(estudante);
+    </script>
+
+    <h2>Exercício 11: Array de Objetos</h2>
+    <script>
+        let livros = [
+            { titulo: "Dom Casmurro", autor: "Machado de Assis", anoDePublicacao: 1899 },
+            { titulo: "1984", autor: "George Orwell", anoDePublicacao: 1949 },
+            { titulo: "O Pequeno Príncipe", autor: "Antoine de Saint-Exupéry", anoDePublicacao: 1943 }
+        ];
+        livros.forEach(livro => console.log(livro.titulo));
+    </script>
+
+    <h2>Exercício 12: Atualizar Valores de Objetos em um Array</h2>
+    <script>
+        let carros = [
+            { marca: "Ford", modelo: "Fiesta", ano: 2010 },
+            { marca: "Chevrolet", modelo: "Onix", ano: 2015 },
+            { marca: "Honda", modelo: "Civic", ano: 2018 }
+        ];
+        let anoAtual = new Date().getFullYear();
+        carros.forEach(carro => carro.ano = anoAtual);
+        console.log(carros);
+    </script>
+
+    <h2>Exercício 13: Encontrar um Objeto em um Array</h2>
+    <script>
+        let pessoas = [
+            { nome: "Ana", idade: 25, cidade: "São Paulo" },
+            { nome: "Carlos", idade: 35, cidade: "Rio de Janeiro" },
+            { nome: "Beatriz", idade: 28, cidade: "Curitiba" }
+        ];
+        let pessoaMaior30 = pessoas.find(p => p.idade > 30);
+        if (pessoaMaior30) {
+            console.log("Pessoa com mais de 30 anos:", pessoaMaior30.nome);
+        }
+    </script>
+</body>
+</html>
